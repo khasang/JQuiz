@@ -12,3 +12,5 @@
 hs_err_pid*
 data/architecture/uml/architecture/.idea/
 data/architecture/uml/architecture/architecture.iml
+JavaQuiz/.idea/
+JavaQuiz/build.gradle
