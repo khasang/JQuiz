@@ -12,10 +12,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Test Test Test"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Start Screen"
         android:id="@+id/textView"
         android:layout_marginTop="115dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
