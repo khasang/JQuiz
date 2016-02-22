@@ -64,12 +64,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:entries="@array/language_arrays"
+        android:prompt="@string/settings_language__prompt"
         android:layout_alignTop="@+id/textViewSettingsLanguage"
-        android:layout_alignRight="@+id/switchSettingsCompleted"
-        android:layout_alignEnd="@+id/switchSettingsCompleted"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/textViewSettingsLanguage"
-        android:layout_toEndOf="@+id/textViewSettingsLanguage"
-        android:spinnerMode="dropdown" />
+        android:layout_toEndOf="@+id/textViewSettingsLanguage" />
 
 
 </RelativeLayout>
