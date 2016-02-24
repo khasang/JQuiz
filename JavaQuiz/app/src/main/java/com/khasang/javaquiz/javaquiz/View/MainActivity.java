@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.khasang.javaquiz.javaquiz.Presenter.PresenterImpl;
+import com.khasang.javaquiz.javaquiz.Presenter.IPresenter;
 import com.khasang.javaquiz.javaquiz.R;
 
 public class MainActivity extends AppCompatActivity {
-    PresenterImpl presenter;
+    IPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFAB(){
-        return;
+
     }
 }
