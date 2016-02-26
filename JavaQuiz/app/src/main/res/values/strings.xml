@@ -5,6 +5,8 @@
     <string name="settings_label_language">Language:</string>
     <string name="settings_language__prompt">Choose a language</string>
     <string name="item_1">Итем 1</string>
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
 
     <string-array name="language_arrays">
         <item>English</item>
