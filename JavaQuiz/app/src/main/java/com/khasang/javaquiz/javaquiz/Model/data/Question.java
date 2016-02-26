@@ -1,20 +1,32 @@
 package com.khasang.javaquiz.javaquiz.Model.data;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by ChornyiUA on 02.02.2016.
  */
-public class Question {
+public class Question extends SugarRecord {
     private String question;
+    private String correctAnswers;
     private String answer1;
     private String answer2;
     private String answer3;
     private String answer4;
     private String theme;
-    private String discription;
-    private String difficult;
+    private String description;
+    private String difficulty;
     private boolean completed;
     private boolean chosen;
 
+
+
+    public String getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public void setCorrectAnswers(String correctAnswers) {
+        this.correctAnswers = correctAnswers;
+    }
     public String getQuestion() {
         return question;
     }
@@ -63,20 +75,20 @@ public class Question {
         this.theme = theme;
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getDifficult() {
-        return difficult;
+    public String getDifficulty() {
+        return difficulty;
     }
 
-    public void setDifficult(String difficult) {
-        this.difficult = difficult;
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 
     public boolean isCompleted() {

@@ -32,18 +32,18 @@
                 app:tabIndicatorHeight="6dp"
                 app:tabSelectedTextColor="@color/color_white"
                 app:tabTextColor="@color/color_white"
-                android:id="@+id/tabLayout-test" />
+                android:id="@+id/tabLayout_test" />
 
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager-test"
+            android:id="@+id/viewpager_test"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab-test"
+            android:id="@+id/fab_test"
             android:src="@drawable/ic_navigate_next_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
