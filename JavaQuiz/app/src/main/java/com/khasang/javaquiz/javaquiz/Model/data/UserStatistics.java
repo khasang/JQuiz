@@ -9,6 +9,17 @@ public class UserStatistics {
     private int rightAnswersAmount;
     private double averageTime;
 
+    public UserStatistics() {
+    }
+
+    public UserStatistics(int passedTestsAmount, int passedQuestionsAmount, int rightAnswersAmount, double averageTime) {
+
+        this.passedTestsAmount = passedTestsAmount;
+        this.passedQuestionsAmount = passedQuestionsAmount;
+        this.rightAnswersAmount = rightAnswersAmount;
+        this.averageTime = averageTime;
+    }
+
     public int getPassedTestsAmount() {
         return passedTestsAmount;
     }

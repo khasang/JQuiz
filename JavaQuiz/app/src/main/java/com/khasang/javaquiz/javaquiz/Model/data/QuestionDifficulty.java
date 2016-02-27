@@ -6,14 +6,21 @@ import com.orm.SugarRecord;
  * Created by pcuser on 26.02.2016.
  */
 public class QuestionDifficulty extends SugarRecord {
-    private int difficulty;
+    private String difficulty;
 
-    public int getDifficulty() {
-        return difficulty;
+    public QuestionDifficulty() {
     }
 
-    public void setDifficulty(int difficulty) {
+    public QuestionDifficulty(String difficulty) {
+
         this.difficulty = difficulty;
     }
 
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
 }
