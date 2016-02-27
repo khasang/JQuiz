@@ -12,25 +12,23 @@ public class Question extends SugarRecord {
     private String answer2;
     private String answer3;
     private String answer4;
-    private int theme;
     private String description;
-    private int difficulty;
     private boolean completed;
     private boolean chosen;
+    QuestionDifficulty difficulty;
+    QuestionTheme theme;
 
     public Question() {
     }
 
-    public Question(String question, String correctAnswers, String answer1, String answer2, String answer3, String answer4, int theme, String description, int difficulty, boolean completed, boolean chosen) {
+    public Question(String question, String correctAnswers, String answer1, String answer2, String answer3, String answer4, String description, boolean completed, boolean chosen) {
         this.question = question;
         this.correctAnswers = correctAnswers;
         this.answer1 = answer1;
         this.answer2 = answer2;
         this.answer3 = answer3;
         this.answer4 = answer4;
-        this.theme = theme;
         this.description = description;
-        this.difficulty = difficulty;
         this.completed = completed;
         this.chosen = chosen;
     }
@@ -90,22 +88,6 @@ public class Question extends SugarRecord {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getTheme() {
-        return theme;
-    }
-
-    public void setTheme(int theme) {
-        this.theme = theme;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
     }
 
     public boolean isCompleted() {

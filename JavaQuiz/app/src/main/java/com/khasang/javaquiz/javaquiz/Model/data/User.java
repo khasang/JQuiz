@@ -9,12 +9,12 @@ public class User extends SugarRecord {
     private String name;
     private String email;
     private String password;
+    UserStatistics statistics;
 
     public User() {
     }
 
     public User(String name, String email, String password) {
-
         this.name = name;
         this.email = email;
         this.password = password;
