@@ -1,19 +1,45 @@
 package com.khasang.javaquiz.javaquiz.Model.data;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by ChornyiUA on 02.02.2016.
  */
-public class Question {
+public class Question extends SugarRecord {
     private String question;
+    private String correctAnswers;
     private String answer1;
     private String answer2;
     private String answer3;
     private String answer4;
-    private String theme;
-    private String discription;
-    private String difficult;
+    private String description;
     private boolean completed;
     private boolean chosen;
+    QuestionDifficulty difficulty;
+    QuestionTheme theme;
+
+    public Question() {
+    }
+
+    public Question(String question, String correctAnswers, String answer1, String answer2, String answer3, String answer4, String description, boolean completed, boolean chosen) {
+        this.question = question;
+        this.correctAnswers = correctAnswers;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
+        this.answer3 = answer3;
+        this.answer4 = answer4;
+        this.description = description;
+        this.completed = completed;
+        this.chosen = chosen;
+    }
+
+    public String getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public void setCorrectAnswers(String correctAnswers) {
+        this.correctAnswers = correctAnswers;
+    }
 
     public String getQuestion() {
         return question;
@@ -55,28 +81,13 @@ public class Question {
         this.answer4 = answer4;
     }
 
-    public String getTheme() {
-        return theme;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
-    public String getDiscription() {
-        return discription;
-    }
-
-    public void setDiscription(String discription) {
-        this.discription = discription;
-    }
-
-    public String getDifficult() {
-        return difficult;
-    }
-
-    public void setDifficult(String difficult) {
-        this.difficult = difficult;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isCompleted() {
