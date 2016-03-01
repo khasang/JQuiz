@@ -1,9 +1,11 @@
 package com.khasang.javaquiz.javaquiz.Model.data;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by pcuser on 26.02.2016.
  */
-public class UserStatistics {
+public class UserStatistics extends SugarRecord {
     private int passedTestsAmount;
     private int passedQuestionsAmount;
     private int rightAnswersAmount;
