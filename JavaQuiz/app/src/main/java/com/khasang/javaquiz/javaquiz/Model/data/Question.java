@@ -15,8 +15,8 @@ public class Question extends SugarRecord {
     private String description;
     private boolean completed;
     private boolean chosen;
-    QuestionDifficulty difficulty;
-    QuestionTheme theme;
+    private QuestionDifficulty difficulty;
+    private QuestionTheme theme;
 
     public Question() {
     }
@@ -31,6 +31,22 @@ public class Question extends SugarRecord {
         this.description = description;
         this.completed = completed;
         this.chosen = chosen;
+    }
+
+    public QuestionTheme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(QuestionTheme theme) {
+        this.theme = theme;
+    }
+
+    public QuestionDifficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(QuestionDifficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     public String getCorrectAnswers() {
