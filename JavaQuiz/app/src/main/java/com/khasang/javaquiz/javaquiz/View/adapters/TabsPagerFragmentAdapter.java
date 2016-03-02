@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.khasang.javaquiz.javaquiz.View.fragments.QuickTestFragment;
 import com.khasang.javaquiz.javaquiz.View.fragments.ThemesListFragment;
 
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
@@ -30,7 +31,7 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter {
             case 0:
                 return ThemesListFragment.getInstance();
             case 1:
-                return ThemesListFragment.getInstance();
+                return QuickTestFragment.getInstance();
             case 2:
                 return ThemesListFragment.getInstance();
         }
