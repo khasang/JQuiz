@@ -9,7 +9,7 @@ public class User extends SugarRecord {
     private String name;
     private String email;
     private String password;
-    UserStatistics statistics;
+    private UserStatistics statistics;
 
     public User() {
     }
@@ -18,6 +18,14 @@ public class User extends SugarRecord {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public UserStatistics getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(UserStatistics statistics) {
+        this.statistics = statistics;
     }
 
     public String getName() {

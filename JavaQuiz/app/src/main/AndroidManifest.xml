@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="DATABASE"
-            android:value="dbTasks.sqlite" />
+            android:value="dbQuestions.sqlite" />
         <meta-data
             android:name="VERSION"
             android:value="1" />
