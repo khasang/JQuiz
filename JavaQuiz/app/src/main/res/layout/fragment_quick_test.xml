@@ -1,77 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".View.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/SettingsCompleted"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/settings_label_completed"
-        android:id="@+id/textViewQuickTestCompleted"
-        android:layout_marginTop="34dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:orientation="horizontal">
 
-    <Switch
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewQuickTestCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_weight="1"
+            android:text="@string/settings_label_completed"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Switch
+            android:id="@+id/switchQuickTestCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SettingsCount"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/switchQuickTestCompleted"
-        android:layout_alignTop="@id/textViewQuickTestCompleted"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewQuickTestCount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_weight="2"
+            android:text="@string/settings_label_count"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <SeekBar
+            android:id="@+id/seekBarQuickTest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_weight="1"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:max="90" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SettingsLanguage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/settings_label_count"
-        android:id="@+id/textViewQuickTestCount"
-        android:layout_marginTop="32dp"
-        android:layout_below="@id/switchQuickTestCompleted"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:orientation="horizontal">
 
-    <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBarQuickTest"
-        android:layout_alignTop="@id/textViewQuickTestCount"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@id/textViewQuickTestCount"
-        android:layout_toEndOf="@id/textViewQuickTestCount" />
+        <TextView
+            android:id="@+id/textViewQuickTestLanguage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/settings_label_difficulty"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_weight="1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/settings_label_language"
-        android:id="@+id/textViewQuickTestLanguage"
-        android:layout_marginTop="26dp"
-        android:layout_below="@id/seekBarQuickTest"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerQuickTest"
+            android:entries="@array/difficulty_arrays"
+            android:prompt="@string/settings_language__prompt"
+            android:spinnerMode="dropdown"
+            android:layout_weight="1" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinnerQuickTest"
-        android:spinnerMode="dropdown"
-        android:entries="@array/difficulty_arrays"
-        android:prompt="@string/settings_language__prompt"
-        android:layout_alignTop="@id/textViewQuickTestLanguage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@id/textViewQuickTestLanguage"
-        android:layout_toEndOf="@id/textViewQuickTestLanguage" />
+    </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>
