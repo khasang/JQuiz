@@ -22,7 +22,7 @@ public class PresenterImpl implements IPresenter {
     }
 
     @Override
-    public void unClick() {
+    public void onClick() {
     }
 
     @Override
