@@ -3,10 +3,15 @@ package com.khasang.javaquiz.javaquiz.Presenter;
 import com.khasang.javaquiz.javaquiz.Presenter.Tests.BaseTest;
 import com.khasang.javaquiz.javaquiz.Presenter.Tests.TypeTest;
 
+import java.util.List;
+
 /**
  * Created by Andy on 18.02.2016.
  */
 public interface IPresenter {
     void unClick();
-    BaseTest getTest(TypeTest typeTest);
+
+    void createTest(TypeTest typeTest);
+
+    List<String> getCurrentQuestion(int questionNumber);
 }
