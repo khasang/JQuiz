@@ -8,7 +8,16 @@ import java.util.List;
  * Created by Andy on 18.02.2016.
  */
 public abstract class BaseTest {
-    List<Question> listOfQuestions;
+    private List<Question> listOfQuestions;
+
+    public List<Question> getListOfQuestions() {
+        return listOfQuestions;
+    }
+
+    public void setListOfQuestions(List<Question> listOfQuestions) {
+        this.listOfQuestions = listOfQuestions;
+    }
+
 
     boolean checkIfAnswerIsCorrect(int questionNumber, int answerNumber) {
         throw new UnsupportedOperationException();

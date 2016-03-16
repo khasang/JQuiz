@@ -46,7 +46,7 @@ public class PresenterImpl implements IPresenter {
     @Override
     public List<String> getCurrentQuestion(int questionNumber) {
         List<String> questionEntities = new ArrayList<>();
-        Question currentQuestion = test.listOfQuestions.get(questionNumber);
+        Question currentQuestion = test.getListOfQuestions().get(questionNumber);
         questionEntities.add(currentQuestion.getQuestion());
         questionEntities.add(currentQuestion.getAnswer1());
         questionEntities.add(currentQuestion.getAnswer2());

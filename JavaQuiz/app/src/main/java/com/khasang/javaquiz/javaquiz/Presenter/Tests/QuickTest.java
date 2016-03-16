@@ -14,7 +14,7 @@ public class QuickTest extends BaseTest {
     }
 
     public QuickTest(IModel model) { // + количествоо вопросов во вход?
-        super.listOfQuestions = model.getListQuestion(5);
+        setListOfQuestions(model.getListQuestion(5));
     }
 
 }
