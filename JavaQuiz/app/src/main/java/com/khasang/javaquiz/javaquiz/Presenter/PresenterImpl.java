@@ -2,10 +2,12 @@ package com.khasang.javaquiz.javaquiz.Presenter;
 
 import com.khasang.javaquiz.javaquiz.Model.IModel;
 import com.khasang.javaquiz.javaquiz.Model.ModelImpl;
+import com.khasang.javaquiz.javaquiz.Model.data.Question;
 import com.khasang.javaquiz.javaquiz.Presenter.Tests.BaseTest;
 import com.khasang.javaquiz.javaquiz.Presenter.Tests.QuickTest;
 import com.khasang.javaquiz.javaquiz.Presenter.Tests.TypeTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,7 +45,15 @@ public class PresenterImpl implements IPresenter {
 
     @Override
     public List<String> getCurrentQuestion(int questionNumber) {
-        return null;
+        List<String> questionEntities = new ArrayList<>();
+        Question currentQuestion = test.listOfQuestions.get(questionNumber);
+        questionEntities.add(currentQuestion.getQuestion());
+        questionEntities.add(currentQuestion.getAnswer1());
+        questionEntities.add(currentQuestion.getAnswer2());
+        questionEntities.add(currentQuestion.getAnswer3());
+        questionEntities.add(currentQuestion.getAnswer4());
+        questionEntities.add(currentQuestion.getDescription());
+        return questionEntities;
     }
 
 
