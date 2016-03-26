@@ -1,5 +1,6 @@
 package com.khasang.javaquiz.javaquiz.View;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.khasang.javaquiz.javaquiz.Model.data.Question;
 import com.khasang.javaquiz.javaquiz.Presenter.IPresenter;
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), TestActivity.class);
+                startActivity(i);
                 switch (viewPager.getCurrentItem()) {
                     case R.id.tab_themes:
                         // TODO: add item in current list
