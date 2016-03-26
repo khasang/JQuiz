@@ -1,5 +1,6 @@
 package com.khasang.javaquiz.javaquiz.View;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -42,11 +43,12 @@ public class TestActivity extends AppCompatActivity {
     }
 
     private void initFab() {
-        fab = (FloatingActionButton)findViewById(R.id.fab_test);
+        fab = (FloatingActionButton) findViewById(R.id.fab_test);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -64,11 +66,15 @@ public class TestActivity extends AppCompatActivity {
     }
 
     private void initTabs() {
-        viewPager = (ViewPager)findViewById(R.id.viewpager_test);
-        TestTabsPagerFragmentAdapter adapter = new TestTabsPagerFragmentAdapter(getSupportFragmentManager());
+        viewPager = (ViewPager) findViewById(R.id.viewpager_test);
+        TestTabsPagerFragmentAdapter adapter = new TestTabsPagerFragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout_test);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
+        adapter.setPageAmount(15); // TODO: set page amount according to the number of questions
+        adapter.notifyDataSetChanged();
     }
 }

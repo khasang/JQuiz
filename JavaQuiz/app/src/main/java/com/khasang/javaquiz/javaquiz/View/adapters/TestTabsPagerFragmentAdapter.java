@@ -1,47 +1,38 @@
 package com.khasang.javaquiz.javaquiz.View.adapters;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.khasang.javaquiz.javaquiz.View.fragments.QuestionFragment;
 import com.khasang.javaquiz.javaquiz.View.fragments.ThemesListFragment;
 
-public class TestTabsPagerFragmentAdapter extends FragmentPagerAdapter {
+public class TestTabsPagerFragmentAdapter extends FragmentStatePagerAdapter {
+    private final Context context;
+    private int pageAmount;
 
-    private String[] tabs;
-
-    public TestTabsPagerFragmentAdapter(FragmentManager fm) {
+    public TestTabsPagerFragmentAdapter(Context context, FragmentManager fm) {
         super(fm);
-        tabs = new String[]{
-                "Q1",
-                "Q2",
-                "Q3",
-                "Q4",
-                "Q5",
-                "Q6"
-        };
+        this.context = context;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-            return tabs[position];
+        return QuestionFragment.getTitle(position);
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                return ThemesListFragment.getInstance();
-            case 1:
-                return ThemesListFragment.getInstance();
-            case 2:
-                return ThemesListFragment.getInstance();
-        }
-        return null;
+        return QuestionFragment.getInstance(position);
     }
 
     @Override
     public int getCount() {
-        return tabs.length;
+        return pageAmount;
+    }
+
+    public void setPageAmount(int pageAmount) {
+        this.pageAmount = pageAmount;
     }
 }
