@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Andy on 18.02.2016.
  */
 public interface IPresenter {
-    void unClick();
+    void onClick();
 
     void createTest(TypeTest typeTest);
 
