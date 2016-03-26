@@ -18,10 +18,11 @@ public class QuickTestFragment extends Fragment {
     private SeekBar countSeekBar;
     private TextView countTextView;
 
-    private int questionCount;
-    final int QUESTION_MIN = 1;
+    final int QUESTION_MIN = 5;
     final int QUESTION_MAX = 100;
     final int QUESTION_DEFAULT = 10;
+    final int QUESTION_DIVIDER = 5;
+    private int questionCount = QUESTION_DEFAULT;
 
     public static QuickTestFragment getInstance(){
         Bundle args = new Bundle();
@@ -43,14 +44,18 @@ public class QuickTestFragment extends Fragment {
     public void initSeekBar(){
         countSeekBar = (SeekBar) view.findViewById(R.id.seekBarQuickTest);
         countTextView = (TextView) view.findViewById(R.id.textViewQuickTestCount);
-        countSeekBar.setMax(QUESTION_MAX - QUESTION_MIN);
+        //countSeekBar.setMax(QUESTION_MAX - QUESTION_MIN);
+        countSeekBar.setMax((QUESTION_MAX-QUESTION_MIN)/QUESTION_DIVIDER);
+        countSeekBar.setProgress((questionCount - QUESTION_MIN)/QUESTION_DIVIDER);
+        setTextCount();
 
         countSeekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        questionCount = QUESTION_MIN + progress;
-                        countTextView.setText(getResources().getString(R.string.settings_label_count) + Integer.toString(questionCount));
+                        //questionCount = QUESTION_MIN + progress;
+                        questionCount = progress * QUESTION_DIVIDER + QUESTION_MIN;
+                        setTextCount();
                     }
 
                     @Override
@@ -60,9 +65,13 @@ public class QuickTestFragment extends Fragment {
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
-                        countTextView.setText(getResources().getString(R.string.settings_label_count) + Integer.toString(questionCount));
+                        setTextCount();
                     }
                 }
         );
+    }
+
+    private void setTextCount() {
+        countTextView.setText(getResources().getString(R.string.settings_label_count) + String.format(" %d", questionCount));
     }
 }

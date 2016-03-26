@@ -69,7 +69,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textViewQuickTestLanguage"
+            android:id="@+id/textViewQuickTestDifficulty"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -78,14 +78,38 @@
             android:layout_weight="1" />
 
         <Spinner
+            android:id="@+id/spinnerQuickTestDifficulty"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinnerQuickTest"
             android:entries="@array/difficulty_arrays"
-            android:prompt="@string/settings_language__prompt"
+            android:prompt="@string/settings_difficulty__prompt"
             android:spinnerMode="dropdown"
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/settings_label_language"
+            android:id="@+id/textViewQuickTestLanguage"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/language_arrays"
+            android:prompt="@string/settings_language__prompt"
+            android:id="@+id/spinnerQuickTestLanguage"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
 
 </LinearLayout>

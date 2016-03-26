@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">JavaQuiz</string>
     <string name="settings_label_completed">Show completed:</string>
-    <string name="settings_label_count">Count: </string>
+    <string name="settings_label_count">Count:</string>
     <string name="settings_label_language">Language:</string>
     <string name="settings_label_difficulty">Difficulty:</string>
     <string name="settings_language__prompt">Choose a language</string>
-    <string name="item_1">Итем 1</string>
+    <string name="settings_difficulty__prompt">Choose a difficulty</string>
+    <string name="item_1">Item 1</string>
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
 
