@@ -16,13 +16,14 @@ import java.util.List;
 public class PresenterImpl implements IPresenter {
     private BaseTest test;
     private IModel model;
+    private AnswerOrder answerOrder;
 
     public PresenterImpl() {
         model = new ModelImpl();
     }
 
     @Override
-    public void unClick() {
+    public void onClick() {
     }
 
     @Override
