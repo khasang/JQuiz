@@ -51,23 +51,22 @@ public class QuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(FRAGMENT_QUESTION, container, false);
+        List questionEntities = listener.getQuestion(getArguments().getInt(KEY_POSITION, -1));
 
-        // TODO: set text of current question/answers
         TextView question = (TextView) view.findViewById(R.id.question);
-        int position = getArguments().getInt(KEY_POSITION, -1);
-        question.setText("Question " + getTitle(position));
+        question.setText(questionEntities.get(0).toString());
 
         RadioButton answer1 = (RadioButton) view.findViewById(R.id.answer1);
-        answer1.setText("answer1");
+        answer1.setText(questionEntities.get(1).toString());
 
         RadioButton answer2 = (RadioButton) view.findViewById(R.id.answer2);
-        answer2.setText("answer2");
+        answer2.setText(questionEntities.get(2).toString());
 
         RadioButton answer3 = (RadioButton) view.findViewById(R.id.answer3);
-        answer3.setText("answer3");
+        answer3.setText(questionEntities.get(3).toString());
 
         RadioButton answer4 = (RadioButton) view.findViewById(R.id.answer4);
-        answer4.setText("answer4");
+        answer4.setText(questionEntities.get(4).toString());
 
         return view;
     }
