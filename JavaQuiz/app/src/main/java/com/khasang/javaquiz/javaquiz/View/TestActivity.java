@@ -15,6 +15,7 @@ import android.view.View;
 import com.khasang.javaquiz.javaquiz.R;
 import com.khasang.javaquiz.javaquiz.View.adapters.TabsPagerFragmentAdapter;
 import com.khasang.javaquiz.javaquiz.View.adapters.TestTabsPagerFragmentAdapter;
+import com.khasang.javaquiz.javaquiz.View.fragments.QuickTestFragment;
 
 public class TestActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -70,7 +71,7 @@ public class TestActivity extends AppCompatActivity {
         TestTabsPagerFragmentAdapter adapter = new TestTabsPagerFragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
-        adapter.setPageAmount(15); // TODO: set page amount according to the number of questions
+        adapter.setPageAmount(QuickTestFragment.getQuestionCount());
         adapter.notifyDataSetChanged();
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout_test);

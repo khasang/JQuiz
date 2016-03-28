@@ -18,11 +18,11 @@ public class QuickTestFragment extends Fragment {
     private SeekBar countSeekBar;
     private TextView countTextView;
 
-    final int QUESTION_MIN = 5;
-    final int QUESTION_MAX = 100;
-    final int QUESTION_DEFAULT = 10;
-    final int QUESTION_DIVIDER = 5;
-    private int questionCount = QUESTION_DEFAULT;
+    static final int QUESTION_MIN = 5;
+    static final int QUESTION_MAX = 100;
+    static final int QUESTION_DEFAULT = 5;
+    static final int QUESTION_DIVIDER = 5;
+    private static int questionCount = QUESTION_DEFAULT;
 
     public static QuickTestFragment getInstance(){
         Bundle args = new Bundle();
@@ -73,5 +73,9 @@ public class QuickTestFragment extends Fragment {
 
     private void setTextCount() {
         countTextView.setText(getResources().getString(R.string.settings_label_count) + String.format(" %d", questionCount));
+    }
+
+    public static int getQuestionCount() {
+        return questionCount;
     }
 }
