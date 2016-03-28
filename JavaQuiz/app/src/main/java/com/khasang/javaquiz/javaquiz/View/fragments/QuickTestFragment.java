@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.khasang.javaquiz.javaquiz.R;
 
@@ -55,6 +56,10 @@ public class QuickTestFragment extends Fragment {
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         //questionCount = QUESTION_MIN + progress;
                         questionCount = progress * QUESTION_DIVIDER + QUESTION_MIN;
+                        if (questionCount > 9) {
+                            Toast.makeText(getActivity(), "вопросов маловато будет!", Toast.LENGTH_SHORT).show();
+                            questionCount = 9;
+                        }
                         setTextCount();
                     }
 
