@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,12 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.khasang.javaquiz.javaquiz.Presenter.IPresenter;
+import com.khasang.javaquiz.javaquiz.Presenter.PresenterImpl;
+import com.khasang.javaquiz.javaquiz.Presenter.Tests.TypeTest;
 import com.khasang.javaquiz.javaquiz.R;
-import com.khasang.javaquiz.javaquiz.View.adapters.TabsPagerFragmentAdapter;
 import com.khasang.javaquiz.javaquiz.View.adapters.TestTabsPagerFragmentAdapter;
+import com.khasang.javaquiz.javaquiz.View.fragments.QuestionFragment;
 import com.khasang.javaquiz.javaquiz.View.fragments.QuickTestFragment;
 
+import java.util.List;
+
 public class TestActivity extends AppCompatActivity {
+    private IPresenter presenter;
     private Toolbar toolbar;
     private static final int LAYOUT = R.layout.activity_test;
     private ViewPager viewPager;
@@ -31,7 +36,16 @@ public class TestActivity extends AppCompatActivity {
         initToolbar();
         initTabs();
         initFab();
+
+        createTest();
     }
+
+    private void createTest() {
+        presenter = new PresenterImpl();
+        presenter.createTest(TypeTest.TYPE_1);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
