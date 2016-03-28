@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.khasang.javaquiz.javaquiz.R;
@@ -36,10 +36,21 @@ public class QuestionFragment extends Fragment {
         View view = inflater.inflate(FRAGMENT_QUESTION, container, false);
 
         // TODO: set text of current question/answers
-        // TODO: save answer number of current question
-        TextView sampleText = (TextView) view.findViewById(R.id.question);
+        TextView question = (TextView) view.findViewById(R.id.question);
         int position = getArguments().getInt(KEY_POSITION, -1);
-        sampleText.setText("Question " + getTitle(position));
+        question.setText("Question " + getTitle(position));
+
+        RadioButton answer1 = (RadioButton) view.findViewById(R.id.answer1);
+        answer1.setText("answer1");
+
+        RadioButton answer2 = (RadioButton) view.findViewById(R.id.answer2);
+        answer2.setText("answer2");
+
+        RadioButton answer3 = (RadioButton) view.findViewById(R.id.answer3);
+        answer3.setText("answer3");
+
+        RadioButton answer4 = (RadioButton) view.findViewById(R.id.answer4);
+        answer4.setText("answer4");
 
         return view;
     }

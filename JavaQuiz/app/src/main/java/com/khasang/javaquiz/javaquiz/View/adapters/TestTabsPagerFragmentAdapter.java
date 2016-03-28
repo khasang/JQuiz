@@ -19,7 +19,7 @@ public class TestTabsPagerFragmentAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return QuestionFragment.getTitle(position);
+        return String.valueOf(position + 1);
     }
 
     @Override
