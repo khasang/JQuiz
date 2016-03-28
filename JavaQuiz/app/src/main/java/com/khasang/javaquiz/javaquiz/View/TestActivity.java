@@ -70,11 +70,11 @@ public class TestActivity extends AppCompatActivity {
         TestTabsPagerFragmentAdapter adapter = new TestTabsPagerFragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
+        adapter.setPageAmount(15); // TODO: set page amount according to the number of questions
+        adapter.notifyDataSetChanged();
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout_test);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-
-        adapter.setPageAmount(15); // TODO: set page amount according to the number of questions
-        adapter.notifyDataSetChanged();
     }
 }
