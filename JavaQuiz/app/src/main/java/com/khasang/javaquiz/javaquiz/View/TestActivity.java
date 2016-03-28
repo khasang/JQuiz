@@ -21,7 +21,7 @@ import com.khasang.javaquiz.javaquiz.View.fragments.QuickTestFragment;
 
 import java.util.List;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity implements QuestionFragment.QuestionRequest {
     private IPresenter presenter;
     private Toolbar toolbar;
     private static final int LAYOUT = R.layout.activity_test;
@@ -45,7 +45,10 @@ public class TestActivity extends AppCompatActivity {
         presenter.createTest(TypeTest.TYPE_1);
     }
 
-
+    @Override
+    public List getQuestion(int questionNumber) {
+        return presenter.getCurrentQuestion(questionNumber);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

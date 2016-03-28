@@ -12,9 +12,16 @@ import android.widget.TextView;
 
 import com.khasang.javaquiz.javaquiz.R;
 
+import java.util.List;
+
 public class QuestionFragment extends Fragment {
     private static final int FRAGMENT_QUESTION = R.layout.fragment_question;
     private static final String KEY_POSITION = "position";
+    private QuestionRequest listener;
+
+    public interface QuestionRequest {
+        public List getQuestion(int questionNumber);
+    }
 
     public static QuestionFragment getInstance(int position) {
         Bundle args = new Bundle();
@@ -28,6 +35,16 @@ public class QuestionFragment extends Fragment {
 
     public static String getTitle(int position) {
         return String.valueOf(position + 1);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof QuestionRequest) {
+            listener = (QuestionRequest) context;
+        } else {
+            throw new ClassCastException(context.toString());
+        }
     }
 
     @Override
