@@ -15,12 +15,12 @@ public class ModelImpl implements IModel {
 
 
     @Override
-    public List<Question> getListQuestion(int count) {
+    public List<Question> getQuestionList(int count) {
         List<Question> listOfQuestions = new ArrayList<>();
         List<Integer> questionIDs = new ArrayList<>();
         boolean isThereSameQuestion;
         Random random = new Random();
-        while (listOfQuestions.size() <= count) {
+        while (listOfQuestions.size() < count) {
             int randomQuestionID = random.nextInt(QUESTIONS_AMOUNT) + 1;
             isThereSameQuestion = false;
             for (int i = 0; i < questionIDs.size(); i++) {

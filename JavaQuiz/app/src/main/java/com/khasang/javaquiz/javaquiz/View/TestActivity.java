@@ -37,12 +37,12 @@ public class TestActivity extends AppCompatActivity implements QuestionFragment.
         initTabs();
         initFab();
 
-        createTest();
+        createTest(QuickTestFragment.getQuestionCount());
     }
 
-    private void createTest() {
+    private void createTest(int questionsAmount) {
         presenter = new PresenterImpl();
-        presenter.createTest(TypeTest.TYPE_1);
+        presenter.createTest(TypeTest.TYPE_1, questionsAmount);
     }
 
     @Override

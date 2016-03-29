@@ -27,19 +27,19 @@ public class PresenterImpl implements IPresenter {
     }
 
     @Override
-    public void createTest(TypeTest typeTest) {
+    public void createTest(TypeTest typeTest, int questionsAmount) {
         switch (typeTest) {
             case TYPE_1:
-                test = new QuickTest(model);
+                test = new QuickTest(model, questionsAmount);
                 break;
             case TYPE_2:
-                test = new QuickTest(model);
+                test = new QuickTest(model, questionsAmount);
                 break;
             case TYPE_3:
-                test = new QuickTest(model);
+                test = new QuickTest(model, questionsAmount);
                 break;
             case TYPE_4:
-                test = new QuickTest(model);
+                test = new QuickTest(model, questionsAmount);
                 break;
         }
     }
