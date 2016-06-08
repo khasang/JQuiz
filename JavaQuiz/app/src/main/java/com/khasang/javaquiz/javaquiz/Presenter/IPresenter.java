@@ -11,7 +11,7 @@ import java.util.List;
 public interface IPresenter {
     void onClick();
 
-    void createTest(TypeTest typeTest);
+    void createTest(TypeTest typeTest, int questionsAmount);
 
     List<String> getCurrentQuestion(int questionNumber);
 }

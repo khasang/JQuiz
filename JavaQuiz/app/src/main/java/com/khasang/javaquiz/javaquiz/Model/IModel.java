@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface IModel {
 
-    List<Question> getListQuestion(int count);
+    List<Question> getQuestionList(int count);
 }
