@@ -17,13 +17,18 @@ public class PresenterImpl implements IPresenter {
     private BaseTest test;
     private IModel model;
     private AnswerOrder answerOrder;
+    private static PresenterImpl presenterImplInstance;
 
-    public PresenterImpl() {
+    private PresenterImpl() {
         model = new ModelImpl();
     }
 
     @Override
     public void onClick() {
+    }
+
+    static public PresenterImpl getInstance(){
+        return presenterImplInstance == null ? new PresenterImpl() : presenterImplInstance;
     }
 
     @Override

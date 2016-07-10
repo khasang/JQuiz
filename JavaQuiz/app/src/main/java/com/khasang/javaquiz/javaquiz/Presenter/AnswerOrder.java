@@ -61,7 +61,7 @@ public class AnswerOrder {
     }
 
     // Возвращает текст вопроса по его номерной строке("answer1", "answer2", ...)
-    public String getAnswerByName(Question question, String answerName){
+    private String getAnswerByName(Question question, String answerName){
         switch (answerName){
             case "answer1":
                 return question.getAnswer1();
@@ -73,6 +73,22 @@ public class AnswerOrder {
                 return question.getAnswer4();
             default:
                 return null;
+        }
+    }
+
+    // В обратную сторону: по выбранному пользователем индексу варианта ответа возвратить исходный индекс
+    public int getOriginAnswerIndex(int selectedIndex){
+        switch (order[selectedIndex]){
+            case "answer1":
+                return 0;
+            case "answer2":
+                return 1;
+            case "answer3":
+                return 2;
+            case "answer4":
+                return 3;
+            default:
+                return 0;
         }
     }
 }

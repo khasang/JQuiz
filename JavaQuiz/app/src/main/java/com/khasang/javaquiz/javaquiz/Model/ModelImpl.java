@@ -1,6 +1,7 @@
 package com.khasang.javaquiz.javaquiz.Model;
 
 import com.khasang.javaquiz.javaquiz.Model.data.Question;
+import com.khasang.javaquiz.javaquiz.Model.data.QuestionTheme;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +35,12 @@ public class ModelImpl implements IModel {
             }
         }
         return listOfQuestions;
+    }
+
+    @Override
+    public List<QuestionTheme> getAllThemes() {
+        List<QuestionTheme> themes = new ArrayList<>();
+        themes.add((QuestionTheme) QuestionTheme.findAll(QuestionTheme.class));
+        return themes;
     }
 }

@@ -41,7 +41,7 @@ public class TestActivity extends AppCompatActivity implements QuestionFragment.
     }
 
     private void createTest(int questionsAmount) {
-        presenter = new PresenterImpl();
+        presenter = PresenterImpl.getInstance();
         presenter.createTest(TypeTest.TYPE_1, questionsAmount);
     }
 
